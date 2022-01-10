@@ -6,6 +6,8 @@ import Difficulty from './components/Difficulty';
 import NewChallenger from './components/NewChallenger';
 import CustomOpponents from './components/CustomOpponents';
 import BoxingRing from './components/BoxingRing';
+import Victory from './components/Victory';
+import Defeat from './components/Defeat';
 
 function App() {
   return (
@@ -17,6 +19,8 @@ function App() {
         <Route path="/create-fighter" element={<NewChallenger/>}/>
         <Route path="/fighters" element={<CustomOpponents/>}/>
         <Route path="/ring" element={<BoxingRing/>}/>
+        <Route path="/victory" element={<Victory/>}/>
+        <Route path="defeat" element={<Defeat/>}/>
       </Routes>
       
     </div>
