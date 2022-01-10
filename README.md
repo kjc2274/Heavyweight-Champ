@@ -98,9 +98,10 @@ Time frames are also key in the development cycle.  You have limited time to cod
 ## SWOT Analysis
 
 ### Strengths:
-
+    I am confident that I can accomplish my MVP with my knowledge of React.
 ### Weaknesses:
-
+    I hope to improve game functionality using processes I have not learned yet.
 ### Opportunities:
-
+    Immense room for improvement.
 ### Threats:
+    I lack a clear vision as to what I want this game to do.
