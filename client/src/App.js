@@ -4,6 +4,7 @@ import Navbar from './components/Navbar';
 import Homepage from './components/Homepage';
 import Difficulty from './components/Difficulty';
 import NewChallenger from './components/NewChallenger';
+import CustomOpponents from './components/CustomOpponents';
 
 function App() {
   return (
@@ -13,6 +14,7 @@ function App() {
         <Route path="/" element={<Homepage/>}/>
         <Route path="/select" element={<Difficulty/>}/>
         <Route path="/create-fighter" element={<NewChallenger/>}/>
+        <Route path="/fighters" element={<CustomOpponents/>}/>
       </Routes>
       
     </div>
