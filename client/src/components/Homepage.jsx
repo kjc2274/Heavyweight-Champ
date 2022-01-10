@@ -2,13 +2,13 @@ import { Link } from "react-router-dom";
 
 export default function Homepage() {
     return (
-        <div>Homepage
-            {/* <div>
-                <Link></Link>
+        <div>
+            <div>
+                <Link to="/select">Fight</Link>
             </div>
             <div>
-                <Link></Link>
-            </div> */}
+                <Link to = "/create-fighter">Create Custom Opponent</Link>
+            </div>
         </div>
     )
 }
