@@ -7,7 +7,7 @@ export default function CustomOpponents() {
 
     useEffect(()=>{
         const fetchFighters = async () => {
-            const res = await api.get();
+            const res = await api.get("/?view=Grid+view");
             setFighters(res.data.records);
         }
         fetchFighters();
@@ -15,8 +15,8 @@ export default function CustomOpponents() {
 
     return (
         <div>
-            <h2>Custom Opponents</h2>
-            <ul>
+            <h2>Choose Your Opponent</h2>
+            <ul id="customList">
                 {fighters.map((fighter)=>{
                     return(
                         <li key={fighter.id}>
