@@ -6,7 +6,8 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   background-image: url("https://wallpaperaccess.com/full/1758094.jpg");
-  background-size: 100vw;
+  background-size: 100%;
+  background-attachment: fixed;
   display: flex;
   justify-content: center;
   flex-direction: column;

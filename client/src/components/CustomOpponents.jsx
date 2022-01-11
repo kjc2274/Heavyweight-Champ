@@ -23,7 +23,9 @@ export default function CustomOpponents() {
                         <li key={fighter.id}>
                             <Link to={`/ring/${fighter.id}`}>
                             <div>
-                                <img style={{ height: "20vh"}} src={fighter.fields.image} alt={fighter.fields.name}/>
+                                <img style={{ height: "20vh"}} 
+                                src={fighter.fields.image} 
+                                alt={fighter.fields.name}/>
                                 <h3>{fighter.fields.name}</h3>
                                 <h4>{fighter.fields.hp}</h4>
                             </div>

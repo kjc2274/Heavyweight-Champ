@@ -18,7 +18,7 @@ function App() {
         <Route path="/select" element={<Difficulty/>}/>
         <Route path="/create-fighter" element={<NewChallenger/>}/>
         <Route path="/fighters" element={<CustomOpponents/>}/>
-        <Route path="/ring" element={<BoxingRing/>}/>
+        <Route path="/ring/:id" element={<BoxingRing/>}/>
         <Route path="/victory" element={<Victory/>}/>
         <Route path="defeat" element={<Defeat/>}/>
       </Routes>
