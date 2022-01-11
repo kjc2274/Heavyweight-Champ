@@ -8,7 +8,6 @@ export default function CustomOpponents() {
     useEffect(()=>{
         const fetchFighters = async () => {
             const res = await api.get();
-            console.log(res.data.records);
             setFighters(res.data.records);
         }
         fetchFighters();
