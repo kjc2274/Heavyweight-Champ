@@ -5,6 +5,8 @@ export default function Game(props) {
     const [playerChoice, setPlayerChoice] = useState("");
     const [compChoice, setCompChoice] = useState(); 
 
+    const {yourHealth, setYourHealth, compHealth, setCompHealth} = props;
+
     const compRandomChoice = () => {
         setCompChoice(choices[Math.floor(Math.random() * choices.length)]);
     }
@@ -12,8 +14,14 @@ export default function Game(props) {
     const handleClick = (choice) => {
         setPlayerChoice(choice);
         compRandomChoice();
-        console.log(compChoice);
     }
+
+    useEffect(() => {
+        console.log(compHealth)
+        // if(playerChoice === "jab" && compChoice === "jab"){
+
+        // }
+    }, [playerChoice, compChoice])
 
     return (
             

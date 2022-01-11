@@ -39,7 +39,12 @@ export default function BoxingRing() {
                 {/* <button>Jab</button>
                 <button>Cross</button>
                 <button>Defend</button> */}
-                <Game compHealth={compHealth} setCompHealth={setCompHealth}/>
+                <Game 
+                compHealth={fighter.fields.hp} 
+                setCompHealth={setCompHealth} 
+                yourHealth={yourHealth}
+                setYourHealth={setYourHealth}
+                />
             </div>
         </div>
     )
