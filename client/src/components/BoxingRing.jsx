@@ -1,19 +1,20 @@
 import api from "../services/apiConfig";
 import { useParams } from "react-router-dom";
 import { useState, useEffect } from "react";
+import Game from "./Game";
 
 export default function BoxingRing() {
     const [fighter, setFighter] = useState([]);
     const[yourHealth, setYourHealth] = useState(10);
+    const[compHealth, setCompHealth] = useState(0);
     const {id} = useParams();
 
     useEffect(()=>{
-        const fetchFighters = async () => {
+        const fetchFighter = async () => {
             const res = await api.get(`/${id}`);
-            console.log(res.data)
             setFighter(res.data);
         }
-        fetchFighters();
+        fetchFighter();
     }, [])
 
     if(!fighter.fields){
@@ -35,9 +36,10 @@ export default function BoxingRing() {
             </div>
         </div>
             <div>
-                <button>Jab</button>
+                {/* <button>Jab</button>
                 <button>Cross</button>
-                <button>Defend</button>
+                <button>Defend</button> */}
+                <Game compHealth={compHealth} setCompHealth={setCompHealth}/>
             </div>
         </div>
     )
