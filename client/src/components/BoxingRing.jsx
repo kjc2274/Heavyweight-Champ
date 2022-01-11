@@ -13,6 +13,7 @@ export default function BoxingRing() {
         const fetchFighter = async () => {
             const res = await api.get(`/${id}`);
             setFighter(res.data);
+            setCompHealth(res.data.fields.hp);
         }
         fetchFighter();
     }, [])
@@ -32,7 +33,7 @@ export default function BoxingRing() {
             <div>
                 <img style={{height: "20vh"}} src={fighter.fields.image} alt={fighter.fields.name}/>
                 <h3>{fighter.fields.name}</h3>
-                <h3>HP: {fighter.fields.hp}</h3>
+                <h3>HP: {compHealth}</h3>
             </div>
         </div>
             <div>
@@ -40,7 +41,7 @@ export default function BoxingRing() {
                 <button>Cross</button>
                 <button>Defend</button> */}
                 <Game 
-                compHealth={fighter.fields.hp} 
+                compHealth={compHealth} 
                 setCompHealth={setCompHealth} 
                 yourHealth={yourHealth}
                 setYourHealth={setYourHealth}
