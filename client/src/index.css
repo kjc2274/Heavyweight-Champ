@@ -7,6 +7,9 @@ body {
   -moz-osx-font-smoothing: grayscale;
   background-image: url("https://wallpaperaccess.com/full/1758094.jpg");
   background-size: 100vw;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
 }
 
 code {
