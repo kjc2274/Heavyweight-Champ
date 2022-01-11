@@ -2,9 +2,9 @@
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.navbar {
+  background: rgb(25, 76, 97, .5);
+  height: 10vh;
 }
 
 @media (prefers-reduced-motion: no-preference) {
