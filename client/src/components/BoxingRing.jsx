@@ -1,3 +1,4 @@
+import api from "../services/apiConfig";
 
 
 export default function BoxingRing() {
