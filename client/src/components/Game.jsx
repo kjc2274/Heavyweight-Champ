@@ -72,8 +72,8 @@ export default function Game(props) {
                 });
             }else{
                 setCompHealth(compHealth - 3);
-                setYourHealth(yourHealth - 2);
-                toast("You throw a desperate haymaker!", {
+                setYourHealth(yourHealth - 3);
+                toast("You kinda asked for this!", {
                     position: "top-center",
                     autoClose: 2000,
                 });

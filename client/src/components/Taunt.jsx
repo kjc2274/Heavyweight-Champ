@@ -7,7 +7,7 @@ export default function Taunt(props) {
 const handleTaunt = () => {
     setDisable(true);
     let taunt = taunts[Math.floor(Math.random() * taunts.length)];
-    toast(taunt, {
+    toast(`You: ${taunt}`, {
         position: "top-left",
         autoClose: 2000,
         theme: 'light',

@@ -21,6 +21,15 @@ h1 {
   text-shadow: 0 0 3px #00ff62, 0 0 5px #88ff00;
 }
 
+h2{
+  color: rgb(9, 88, 49);
+  text-shadow: 0 0 3px #00ff62, 0 0 5px #88ff00;
+}
+#custom-form{
+  color: rgb(76, 255, 21);
+  text-shadow: 1px 1px #1134fc;
+}
+
 #homeLink{
   font-size: x-large;
   position: fixed;
@@ -31,6 +40,7 @@ h1 {
 
 .homeImage{
   height: 40vh;
+  border-radius: 15%;
 }
 #homepage{
   padding: 40px;

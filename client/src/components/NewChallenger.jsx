@@ -4,9 +4,10 @@ import { useNavigate } from "react-router-dom";
 
 const default_input = {
     name: "",
-    hp: 0,
-    image: "",
+    hp: 10,
+    image: "https://image.similarpng.com/very-thumbnail/2020/07/Expressionless-emoji-Face-on-transparent-PNG.png",
 }
+
 
 export default function NewChallenger() {
     const [input, setInput] = useState(default_input);
@@ -19,6 +20,7 @@ export default function NewChallenger() {
             [id]: value,
         }))
     }
+
 
     const handleNumberInput = (event) => {
         const {id, valueAsNumber} = event.target;
@@ -39,14 +41,14 @@ export default function NewChallenger() {
     return (
         <div>
             <h2>Create Custom Opponent</h2>
-            <form onSubmit={handleSubmit}>
-                <label>Name:</label>
-                <input id="name" value={input.name} placeholder='Full Name' onChange={handleTextInput}/>
+            <form id="custom-form" onSubmit={handleSubmit}>
+                <label>Name:</label><br/>
+                <input id="name" value={input.name} placeholder='Full Name' onChange={handleTextInput} required/>
                 <br />
-                <label>HP:</label>
-                <input id="hp" type="number" value={input.hp} placeholder='Hit Points' onChange={handleNumberInput}/>
+                <label>HP:</label><br/>
+                <input id="hp" type="number" value={input.hp} placeholder='Hit Points' onChange={handleNumberInput} min="0" required/>
                 <br />
-                <label>Image:</label>
+                <label>ImageURL<br/>(optional):</label><br/>
                 <input id="image" value={input.image} placeholder='Add a URL(optional)' onChange={handleTextInput}/>
                 <br />
                 <button>Submit</button>
