@@ -29,23 +29,55 @@ export default function Game(props) {
         if(playerChoice === "jab" && compChoice === "jab"){
             setCompHealth(compHealth - 1);
             setYourHealth(yourHealth -1);
+            toast("You exchange jabs!", {
+                position: "top-center",
+                autoClose: 2000,
+            });
         }else if(playerChoice === "jab" && compChoice === "cross"){
             setCompHealth(compHealth - 1);
             setYourHealth(yourHealth - 2);
+            toast("Your opponent connects with a cross!", {
+                position: "top-center",
+                autoClose: 2000,
+            });
         }else if(playerChoice === "jab" && compChoice === "defend"){
             setCompHealth(compHealth - 1);
+            toast("You jab at your opponent's defense!", {
+                position: "top-center",
+                autoClose: 2000,
+            });
         }else if(playerChoice === "cross" && compChoice === "jab"){
             setCompHealth(compHealth - 2);
             setYourHealth(yourHealth -1);
+            toast("You hit your opponent with a cross!", {
+                position: "top-center",
+                autoClose: 2000,
+            });
         }else if(playerChoice === "cross" && compChoice === "cross"){
             setCompHealth(compHealth - 2);
             setYourHealth(yourHealth - 2);
+            toast("Your exhchange crossing blows!", {
+                position: "top-center",
+                autoClose: 2000,
+            });
         }else if(playerChoice === "cross" && compChoice === "defend"){
-            setYourHealth(yourHealth - 3);
+            setYourHealth(yourHealth - 2);
+            toast("Your opponent counters your cross!", {
+                position: "top-center",
+                autoClose: 2000,
+            });
         }else if(playerChoice === "defend" && compChoice === "jab"){
             setYourHealth(yourHealth -1);
+            toast("You defend against your opponent's jab!", {
+                position: "top-center",
+                autoClose: 2000,
+            });
         }else if(playerChoice === "defend" && compChoice === "cross"){
-            setCompHealth(compHealth - 3);
+            setCompHealth(compHealth - 2);
+            toast("You counter your opponent's cross!", {
+                position: "top-center",
+                autoClose: 2000,
+            });
         }else if(playerChoice === "defend" && compChoice === "defend"){
             toast("Someone throw a punch!", {
                 position: "top-center",
@@ -55,9 +87,9 @@ export default function Game(props) {
     }, [playerChoice, compChoice])
 
     useEffect(()=>{
-        if(compHealth === 0){
+        if(compHealth <= 0){
             navigate("/victory")
-        }else if(yourHealth === 0){
+        }else if(yourHealth <= 0){
             navigate("/defeat")
         }
     },[yourHealth, compHealth])

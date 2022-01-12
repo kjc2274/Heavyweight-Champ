@@ -3,12 +3,23 @@
 }
 
 .navbar {
-  background: rgb(25, 76, 97, .5);
-  height: 10vh;
+  background: rgba(80, 68, 253, 0.5);
+  height: 100px;
+  margin-top: -20px;
+  color: rgb(9, 88, 49);
+}
+h1 {
+  position: center;
+}
+
+#homeLink{
+  position: fixed;
+  right: 5px;
+  top: 5px;
 }
 
 .homeImage{
-  height: 20vw;
+  height: 40vh;
 }
 #homepage{
   display: flex;
@@ -27,32 +38,4 @@
   list-style-type: none;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
