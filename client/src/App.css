@@ -1,9 +1,9 @@
 .App {
   text-align: center;
 }
-a:visited {
-  color: green;
-  text-shadow: 0 0 2px #00ff62;
+a {
+  color: rgb(9, 221, 9);
+  text-shadow: 0 0 2px #1134fc;
 }
 
 
@@ -41,6 +41,8 @@ h1 {
 #ring{
   display: flex;
   justify-content: space-evenly;
+  color: rgb(9, 221, 9);
+  text-shadow: 1px 1px #1134fc;
 }
 
 #customList{

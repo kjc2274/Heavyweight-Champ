@@ -11,7 +11,7 @@ export default function Game(props) {
     const navigate = useNavigate();
 
 
-    const {yourHealth, setYourHealth, compHealth, setCompHealth} = props;
+    const {yourHealth, setYourHealth, compHealth, setCompHealth, compName} = props;
 
     const compRandomChoice = () => {
         setCompChoice(choices[Math.floor(Math.random() * choices.length)]);
@@ -36,13 +36,13 @@ export default function Game(props) {
         }else if(playerChoice === "jab" && compChoice === "cross"){
             setCompHealth(compHealth - 1);
             setYourHealth(yourHealth - 2);
-            toast("Your opponent connects with a cross!", {
+            toast(`${compName} connects with a cross!`, {
                 position: "top-center",
                 autoClose: 2000,
             });
         }else if(playerChoice === "jab" && compChoice === "defend"){
             setCompHealth(compHealth - 1);
-            toast("You jab at your opponent's defense!", {
+            toast(`You jab at ${compName}'s defense!`, {
                 position: "top-center",
                 autoClose: 2000,
             });
@@ -50,14 +50,14 @@ export default function Game(props) {
             if(disable === false){
             setCompHealth(compHealth - 2);
             setYourHealth(yourHealth -1);
-            toast("You hit your opponent with a cross!", {
+            toast(`You hit ${compName} with a cross!`, {
                 position: "top-center",
                 autoClose: 2000,
             });
             }else{
                 setCompHealth(compHealth - 3);
                 setYourHealth(yourHealth - 1);
-                toast("You hook around your opponent's jab!", {
+                toast(`You hook around ${compName}'s jab!`, {
                     position: "top-center",
                     autoClose: 2000,
                 });
@@ -66,7 +66,7 @@ export default function Game(props) {
             if(disable === false){
                 setCompHealth(compHealth - 2);
                 setYourHealth(yourHealth - 2);
-                toast("Your exhchange crossing blows!", {
+                toast("You exhchange crossing blows!", {
                     position: "top-center",
                     autoClose: 2000,
                 });
@@ -81,13 +81,13 @@ export default function Game(props) {
         }else if(playerChoice === "cross" && compChoice === "defend"){
             if(disable === false){
             setYourHealth(yourHealth - 2);
-            toast("Your opponent counters your cross!", {
+            toast(`${compName} counters your cross!`, {
                 position: "top-center",
                 autoClose: 2000,
             });
             }else{
                 setYourHealth(yourHealth - 4);
-                toast("Your opponent easily counters your desperate attack!", {
+                toast(`${compName} easily counters your desperate attack!`, {
                     position: "top-center",
                     autoClose: 2000,
                 });
@@ -95,13 +95,13 @@ export default function Game(props) {
         }else if(playerChoice === "defend" && compChoice === "jab"){
             if(disable === false){
             setYourHealth(yourHealth -1);
-            toast("You defend against your opponent's jab!", {
+            toast(`You defend against ${compName}'s jab!`, {
                 position: "top-center",
                 autoClose: 2000,
             });
             }else{
                 setYourHealth(yourHealth -2);
-                toast("Your opponent's jab breaks your guard!", {
+                toast(`${compName}'s jab breaks your guard!`, {
                 position: "top-center",
                 autoClose: 2000,
             });
@@ -109,13 +109,13 @@ export default function Game(props) {
         }else if(playerChoice === "defend" && compChoice === "cross"){
             if(disable === false){
             setCompHealth(compHealth - 2);
-            toast("You counter your opponent's cross!", {
+            toast(`You counter ${compName}'s cross!`, {
                 position: "top-center",
                 autoClose: 2000,
             });
             }else{
                 setCompHealth(compHealth - 4);
-                toast("You counter your opponent's furious attack!", {
+                toast(`You counter ${compName}'s furious attack!`, {
                 position: "top-center",
                 autoClose: 2000,
             });
