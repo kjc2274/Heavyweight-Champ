@@ -2,7 +2,7 @@ import { toast } from 'react-toastify'
 
 export default function Taunt(props) {
     const {disable, setDisable} = props;
-    const taunts = ["Come and get some!","Yo Mama!", "First time boxing?"];
+    const taunts = ["Come and get some!","Yo Mama!", "First time boxing?", "Your shoe's untied...", "You won't"];
 
 const handleTaunt = () => {
     setDisable(true);
