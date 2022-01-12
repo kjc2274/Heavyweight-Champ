@@ -10,6 +10,7 @@ const handleTaunt = () => {
     toast(taunt, {
         position: "top-left",
         autoClose: 2000,
+        theme: 'light',
     });
     console.log(taunt);
 }

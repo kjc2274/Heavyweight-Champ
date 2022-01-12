@@ -47,12 +47,21 @@ export default function Game(props) {
                 autoClose: 2000,
             });
         }else if(playerChoice === "cross" && compChoice === "jab"){
+            if(disable === false){
             setCompHealth(compHealth - 2);
             setYourHealth(yourHealth -1);
             toast("You hit your opponent with a cross!", {
                 position: "top-center",
                 autoClose: 2000,
             });
+            }else{
+                setCompHealth(compHealth - 3);
+                setYourHealth(yourHealth - 1);
+                toast("You hook around your opponent's jab!", {
+                    position: "top-center",
+                    autoClose: 2000,
+                });
+            }
         }else if(playerChoice === "cross" && compChoice === "cross"){
             if(disable === false){
                 setCompHealth(compHealth - 2);
@@ -62,7 +71,7 @@ export default function Game(props) {
                     autoClose: 2000,
                 });
             }else{
-                setCompHealth(compHealth - 4);
+                setCompHealth(compHealth - 3);
                 setYourHealth(yourHealth - 2);
                 toast("You throw a desperate haymaker!", {
                     position: "top-center",
@@ -84,11 +93,19 @@ export default function Game(props) {
                 });
             }
         }else if(playerChoice === "defend" && compChoice === "jab"){
+            if(disable === false){
             setYourHealth(yourHealth -1);
             toast("You defend against your opponent's jab!", {
                 position: "top-center",
                 autoClose: 2000,
             });
+            }else{
+                setYourHealth(yourHealth -2);
+                toast("Your opponent's jab breaks your guard!", {
+                position: "top-center",
+                autoClose: 2000,
+            });
+            }
         }else if(playerChoice === "defend" && compChoice === "cross"){
             if(disable === false){
             setCompHealth(compHealth - 2);
