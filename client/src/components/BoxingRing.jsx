@@ -6,7 +6,7 @@ import Game from "./Game";
 export default function BoxingRing() {
     const [fighter, setFighter] = useState([]);
     const[yourHealth, setYourHealth] = useState(10);
-    const[compHealth, setCompHealth] = useState(0);
+    const[compHealth, setCompHealth] = useState(10);
     const {id} = useParams();
 
     useEffect(()=>{

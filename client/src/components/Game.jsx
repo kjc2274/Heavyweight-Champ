@@ -1,12 +1,15 @@
 import { useState, useEffect } from "react";
 import { toast } from "react-toastify";
 import Taunt from "./Taunt";
+import { useNavigate } from "react-router-dom";
 
 export default function Game(props) {
     const choices = ["jab", "cross", "defend"];
     const [playerChoice, setPlayerChoice] = useState("");
     const [compChoice, setCompChoice] = useState();
-    const [disable, setDisable] = useState(false); 
+    const [disable, setDisable] = useState(false);
+    const navigate = useNavigate();
+
 
     const {yourHealth, setYourHealth, compHealth, setCompHealth} = props;
 
@@ -50,6 +53,14 @@ export default function Game(props) {
             });
         }
     }, [playerChoice, compChoice])
+
+    useEffect(()=>{
+        if(compHealth === 0){
+            navigate("/victory")
+        }else if(yourHealth === 0){
+            navigate("/defeat")
+        }
+    },[yourHealth, compHealth])
 
     return (
             

@@ -22,7 +22,7 @@ function App() {
         <Route path="/victory" element={<Victory/>}/>
         <Route path="defeat" element={<Defeat/>}/>
       </Routes>
-      <ToastContainer />
+      <ToastContainer theme='dark'/>
     </div>
   );
 }
