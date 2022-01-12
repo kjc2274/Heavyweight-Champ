@@ -19,7 +19,7 @@ export default function CustomOpponents() {
             <ul id="customList">
                 {fighters.map((fighter)=>{
                     return(
-                        <li key={fighter.id}>
+                        <li className="fighterCard" key={fighter.id}>
                             <Link to={`/ring/${fighter.id}`}>
                             <div>
                                 <img style={{ height: "20vh"}} 

@@ -1,18 +1,25 @@
 .App {
   text-align: center;
 }
+a:visited {
+  color: green;
+}
+
 
 .navbar {
   background: rgba(80, 68, 253, 0.5);
   height: 100px;
-  margin-top: -20px;
+  margin-top: -30px;
   color: rgb(9, 88, 49);
 }
 h1 {
+  font-size: 40px;
+  padding-top: 20px;
   position: center;
 }
 
 #homeLink{
+  font-size: large;
   position: fixed;
   right: 5px;
   top: 5px;
@@ -22,6 +29,7 @@ h1 {
   height: 40vh;
 }
 #homepage{
+  padding: 40px;
   display: flex;
   justify-content: space-evenly;
 }
@@ -36,6 +44,10 @@ h1 {
   flex-wrap: wrap;
   justify-content: space-evenly;
   list-style-type: none;
+}
+
+.fighterCard{
+  padding: 10px;
 }
 
 
