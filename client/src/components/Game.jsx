@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import { toast } from "react-toastify";
 import Taunt from "./Taunt";
 
 export default function Game(props) {
@@ -12,13 +13,7 @@ export default function Game(props) {
     const compRandomChoice = () => {
         setCompChoice(choices[Math.floor(Math.random() * choices.length)]);
     }
-    const handleTaunt = () =>{
-        setDisable(true);
-        const taunts = ["Come and get some!","Yo Mama!", "First time boxing?"];
-        let taunt = taunts[Math.floor(Math.random() * taunts.length)];
-        console.log(taunt);
-        <h2>{taunt}</h2>
-    }
+    
         
     const handleClick = (choice) => {
         setPlayerChoice(choice);
@@ -49,14 +44,17 @@ export default function Game(props) {
         }else if(playerChoice === "defend" && compChoice === "cross"){
             setCompHealth(compHealth - 3);
         }else if(playerChoice === "defend" && compChoice === "defend"){
-            alert("Someone throw a punch!")
+            toast("Someone throw a punch!", {
+                position: "top-center",
+                autoClose: 2000,
+            });
         }
     }, [playerChoice, compChoice])
 
     return (
             
         <div>
-            <button disabled={disable} onClick={handleTaunt}>Taunt</button>
+            <Taunt disable={disable} setDisable={setDisable}/>
             <button onClick={() => handleClick("jab")}>Jab</button>
             <button onClick={() => handleClick("cross")}>Cross</button>
             <button onClick={() => handleClick("defend")}>Defend</button>

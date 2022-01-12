@@ -1,5 +1,7 @@
 import './App.css';
 import { Route, Routes } from 'react-router-dom';
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 import Navbar from './components/Navbar';
 import Homepage from './components/Homepage';
 import NewChallenger from './components/NewChallenger';
@@ -20,7 +22,7 @@ function App() {
         <Route path="/victory" element={<Victory/>}/>
         <Route path="defeat" element={<Defeat/>}/>
       </Routes>
-      
+      <ToastContainer />
     </div>
   );
 }
