@@ -1,14 +1,23 @@
 import { useState, useEffect } from "react";
+import Taunt from "./Taunt";
 
 export default function Game(props) {
     const choices = ["jab", "cross", "defend"];
     const [playerChoice, setPlayerChoice] = useState("");
-    const [compChoice, setCompChoice] = useState(); 
+    const [compChoice, setCompChoice] = useState();
+    const [disable, setDisable] = useState(false); 
 
     const {yourHealth, setYourHealth, compHealth, setCompHealth} = props;
 
     const compRandomChoice = () => {
         setCompChoice(choices[Math.floor(Math.random() * choices.length)]);
+    }
+    const handleTaunt = () =>{
+        setDisable(true);
+        const taunts = ["Come and get some!","Yo Mama!", "First time boxing?"];
+        let taunt = taunts[Math.floor(Math.random() * taunts.length)];
+        console.log(taunt);
+        <h2>{taunt}</h2>
     }
         
     const handleClick = (choice) => {
@@ -17,9 +26,8 @@ export default function Game(props) {
     }
 
     useEffect(() => {
-        console.log(playerChoice)
-        console.log(compChoice);
-        console.log(compHealth);
+       setDisable(false);
+
         if(playerChoice === "jab" && compChoice === "jab"){
             setCompHealth(compHealth - 1);
             setYourHealth(yourHealth -1);
@@ -48,6 +56,7 @@ export default function Game(props) {
     return (
             
         <div>
+            <button disabled={disable} onClick={handleTaunt}>Taunt</button>
             <button onClick={() => handleClick("jab")}>Jab</button>
             <button onClick={() => handleClick("cross")}>Cross</button>
             <button onClick={() => handleClick("defend")}>Defend</button>
