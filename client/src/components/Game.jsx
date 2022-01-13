@@ -121,10 +121,18 @@ export default function Game(props) {
             });
             }
         }else if(playerChoice === "defend" && compChoice === "defend"){
+            if(disable === false){
             toast("Someone throw a punch!", {
                 position: "top-center",
                 autoClose: 2000,
             });
+            }else{
+                setYourHealth(yourHealth - 1);
+                toast("You stumble and look like a fool!", {
+                    position: "top-center",
+                    autoClose: 2000,
+                });
+            }
         }
     }, [playerChoice, compChoice])
 
@@ -138,11 +146,11 @@ export default function Game(props) {
 
     return (
             
-        <div>
+        <div id="game-buttons">
             <Taunt disable={disable} setDisable={setDisable}/>
-            <button disabled={disable} onClick={() => handleClick("jab")}>Jab</button>
-            <button onClick={() => handleClick("cross")}>Cross</button>
-            <button onClick={() => handleClick("defend")}>Defend</button>
+            <button className="button" disabled={disable} onClick={() => handleClick("jab")}>Jab</button>
+            <button className="button" onClick={() => handleClick("cross")}>Cross</button>
+            <button className="button" onClick={() => handleClick("defend")}>Defend</button>
         </div>
     )
 }

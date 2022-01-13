@@ -10,6 +10,7 @@ a {
 .navbar {
   background: rgba(80, 68, 253, 0.5);
   height: 100px;
+  width: 100%;
   margin-top: -30px;
   margin-bottom: 30px;
   color: rgb(9, 88, 49);
@@ -55,6 +56,24 @@ h2{
   text-shadow: 1px 1px #1134fc;
 }
 
+#game-buttons{
+  padding: 30px;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.button{
+  font-size: x-large;
+  border-radius: 25%;
+  padding: 15px 30px;
+  margin: 20px;
+}
+
+.button:hover{
+  color: red;
+}
+
 #customList{
   display: flex;
   flex-wrap: wrap;
@@ -71,4 +90,39 @@ h2{
   height: 45vh;
 }
 
+@media (max-width: 800px){
+  h1 {
+    font-size: 30px;
+    padding-top: 30px;
+  }
+  #homepage{
+    flex-direction: column;
+  }
+  .homeImage{
+    margin-top: 30px;
+  }
+  .button{
+    font-size: large;
+    margin: 10px;
+  }
+}
 
+@media (max-width: 450px){
+  h1 {
+    font-size: 30px;
+    padding-top: 45px;
+  }
+  #customList{
+    flex-direction: column;
+    padding-left: 0px;
+  }
+  .button{
+    font-size: medium;
+    padding: 8px 16px;
+    margin: 2px;
+  }
+  #homeLink{
+    font-size: large;
+    
+  }
+}

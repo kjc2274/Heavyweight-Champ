@@ -17,7 +17,7 @@ const handleTaunt = () => {
     
     return (
         <div >
-            <button disabled={disable} onClick={handleTaunt}>Taunt</button>            
+            <button className="button" disabled={disable} onClick={handleTaunt}>Taunt</button>            
         </div>
     )
 }
