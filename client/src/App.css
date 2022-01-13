@@ -6,21 +6,11 @@ a {
   text-shadow: 0 0 2px #1134fc;
 }
 
-.show-div{
+.show{
   visibility: visible;
-  width: 50%;
-  background-color: rgb(39, 28, 28, .5);
-  position: fixed;
-  color: rgb(76, 255, 21);
-  text-shadow: 1px 1px #1134fc;
 }
-.hide-div{
+.hide{
   visibility: hidden;
-  width: 50%;
-  background-color: rgb(39, 28, 28, .5);
-  position: fixed;
-  color: rgb(76, 255, 21);
-  text-shadow: 1px 1px #1134fc;
 }
 
 .navbar {
@@ -69,6 +59,13 @@ h2{
   padding: 40px;
   display: flex;
   justify-content: space-evenly;
+}
+.homepage-help{
+  width: 50%;
+  background-color: rgb(39, 28, 28, .5);
+  position: fixed;
+  color: rgb(76, 255, 21);
+  text-shadow: 1px 1px #1134fc;
 }
 
 #ring{

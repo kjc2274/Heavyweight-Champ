@@ -4,6 +4,7 @@ import { useState } from "react";
 
 export default function Homepage() {
     const [visible, setVisible] = useState(false);
+    const myClass = "homepage-help " + (visible ? "show" : "hide");
     return (
         <div id="homepage">
             <HelpButton setVisible={setVisible}/>
@@ -19,12 +20,9 @@ export default function Homepage() {
                     <h3>Create Custom Opponent</h3>
                 </Link>
             </div>
-            <div className={visible ? "show-div" : "hide-div"}>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. 
-                Totam necessitatibus laudantium officiis accusantium suscipit pariatur harum placeat, 
-                consequuntur quae quam explicabo. Dignissimos magni repellendus nulla ut corporis. 
-                Eveniet, id accusantium?
-            </div>
+            <p className={myClass}>
+                Do you have what it takes to be the next heavyweight champ?
+            </p>
         </div>
     )
 }
