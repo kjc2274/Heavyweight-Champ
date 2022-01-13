@@ -6,6 +6,22 @@ a {
   text-shadow: 0 0 2px #1134fc;
 }
 
+.show-div{
+  visibility: visible;
+  width: 50%;
+  background-color: rgb(39, 28, 28, .5);
+  position: fixed;
+  color: rgb(76, 255, 21);
+  text-shadow: 1px 1px #1134fc;
+}
+.hide-div{
+  visibility: hidden;
+  width: 50%;
+  background-color: rgb(39, 28, 28, .5);
+  position: fixed;
+  color: rgb(76, 255, 21);
+  text-shadow: 1px 1px #1134fc;
+}
 
 .navbar {
   background: rgba(80, 68, 253, 0.5);
@@ -37,6 +53,12 @@ h2{
   right: 5px;
   top: 5px;
   text-shadow: 0 0 2px #00ff62;
+}
+#help-button{
+  font-size: large;
+  position: fixed;
+  left: 5px;
+  top: 5px;
 }
 
 .homeImage{

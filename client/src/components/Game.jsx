@@ -6,7 +6,7 @@ import { useNavigate } from "react-router-dom";
 export default function Game(props) {
     const choices = ["jab", "cross", "defend"];
     const [playerChoice, setPlayerChoice] = useState("");
-    const [compChoice, setCompChoice] = useState();
+    const [compChoice, setCompChoice] = useState("");
     const [disable, setDisable] = useState(false);
     const navigate = useNavigate();
 
@@ -25,6 +25,7 @@ export default function Game(props) {
 
     useEffect(() => {
        setDisable(false);
+       console.log(playerChoice, compChoice)
 
         if(playerChoice === "jab" && compChoice === "jab"){
             setCompHealth(compHealth - 1);
