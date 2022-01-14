@@ -11,6 +11,7 @@ export default function Game(props) {
     const [disableDef, setDisableDef] = useState(false);
     const [cross, setCross] = useState(false);
     const [jab, setJab] = useState(false);
+    const [block, setBlock] = useState(false);
     const navigate = useNavigate();
 
 
@@ -93,8 +94,6 @@ export default function Game(props) {
                 });
             }           
         }else if(playerChoice === "cross" && compChoice === "defend"){
-            setCross(true);
-            setTimeout(() => {setCross(false)}, 250);
             if(disable === false){
             setYourHealth(yourHealth - 2);
             toast(`${compName} counters your cross!`, {
@@ -109,6 +108,8 @@ export default function Game(props) {
                 });
             }
         }else if(playerChoice === "defend" && compChoice === "jab"){
+            setBlock(true);
+            setTimeout(() => {setBlock(false)}, 1500);
             if(disable === false){
             setYourHealth(yourHealth -1);
             toast(`You defend against ${compName}'s jab!`, {
@@ -123,6 +124,8 @@ export default function Game(props) {
             });
             }
         }else if(playerChoice === "defend" && compChoice === "cross"){
+            setCross(true);
+            setTimeout(() => {setCross(false)}, 250);
             if(disable === false){
             setCompHealth(compHealth - 2);
             toast(`You counter ${compName}'s cross!`, {
@@ -137,6 +140,8 @@ export default function Game(props) {
             });
             }
         }else if(playerChoice === "defend" && compChoice === "defend"){
+            setBlock(true);
+            setTimeout(() => {setBlock(false)}, 1500);
             if(disable === false){
                 setDisableDef(true);
             toast("Someone throw a punch!", {
@@ -164,15 +169,17 @@ export default function Game(props) {
     return (
         <div>
             <div id="gloves" style={{marginTop: "70px"}}>
-                    <div id="left-glove" className={(jab ? "jab" : null)}>
+                    <div id={(jab ? "jab" : null)} className={(block ? "block" : null)}>
                         <img 
+                        id="left-glove"
                         className="glove"
                         src="https://assets.stickpng.com/images/580b585b2edbce24c47b2ae8.png" 
                         alt="boxing glove" 
                         />
                     </div>
-                    <div id="right-glove" className={(cross ? "cross" : null)}>
+                    <div id={(cross ? "cross" : null)} className={(block ? "block" : null)}>
                         <img 
+                        id="right-glove"
                         className="glove"
                         src="https://assets.stickpng.com/images/580b585b2edbce24c47b2ae8.png" 
                         alt="boxing glove" 

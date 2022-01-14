@@ -123,19 +123,16 @@ h2{
   position: static;
 }
 #left-glove{
-  margin: 0 -4%;
   transform: scaleX(-1);
 }
-#right-glove{
-  margin: 0 -4%;;
+#jab{
+  margin: -10% -6% 0 0;
 }
-.jab{
-  position: fixed;
-  top: 30vh;
+#cross{
+  margin: -10%  0 0 -6%;
 }
-.cross{
-  position: fixed;
-  top: 30vh;
+.block{
+  margin: 0 -4%;
 }
 
 
@@ -184,6 +181,12 @@ h2{
     left: 50%;
     margin-left: -37.5%;
   }
+  .jab{
+    margin: -20% -10% 0 0;
+  }
+  .cross{
+    margin: -20%  0 0 -10%;
+  }
 }
 
 @media (max-width: 450px){
@@ -211,5 +214,11 @@ h2{
   #homeLink{
     font-size: large;
     
+  }
+  .jab{
+    margin: -30% -14% 0 0;
+  }
+  .cross{
+    margin: -30%  0 0 -14%;
   }
 }
