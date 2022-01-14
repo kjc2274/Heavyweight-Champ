@@ -98,6 +98,7 @@ h2{
 
 #ring{
   display: flex;
+  flex-direction: column;
   justify-content: space-evenly;
   color: rgb(9, 221, 9);
   text-shadow: 1px 1px #1134fc;
@@ -106,6 +107,18 @@ h2{
   position: center;
   color: rgb(76, 255, 21);
   text-shadow: 1px 1px #1134fc;
+}
+#fight-card{
+  display: flex;
+  justify-content: space-evenly;
+  color: rgb(9, 221, 9);
+  text-shadow: 1px 1px #1134fc;
+}
+.glove{
+  height: 20vh;
+}
+#left-glove{
+  transform: scaleX(-1);
 }
 
 

@@ -26,17 +26,34 @@ export default function BoxingRing() {
     }
     return (
         <div>
-            <h2>Fight!</h2>
-            <div id="ring">
+            <div id="fight-card">
                 <div>
-                    <img style={{height: "20vh", borderRadius: "100%"}} src="https://www.emojirequest.com/images/BoxingEmoji.jpg" alt="Your Avatar" />
                     <h3>You</h3>
                     <h3>HP: {yourHealth}</h3>
                 </div>
+                <h2>Fight!</h2>
                 <div>
-                    <img style={{height: "20vh", borderRadius: "100%"}} src={fighter.fields.image} alt={fighter.fields.name}/>
                     <h3>{fighter.fields.name}</h3>
                     <h3>HP: {compHealth}</h3>
+                </div>
+            </div>
+            <div id="ring">
+                <div>
+                    <img style={{height: "20vh", borderRadius: "100%"}} src={fighter.fields.image} alt={fighter.fields.name}/>
+                </div>
+                <div style={{marginTop: "50px"}}>
+                    <img 
+                    id="left-glove"
+                    className="glove"
+                    src="https://assets.stickpng.com/images/580b585b2edbce24c47b2ae8.png" 
+                    alt="boxing glove" 
+                    />
+                    <img 
+                    id="right-glove"
+                    className="glove"
+                    src="https://assets.stickpng.com/images/580b585b2edbce24c47b2ae8.png" 
+                    alt="boxing glove" 
+                    />
                 </div>
             </div>
                 <div>
@@ -58,3 +75,9 @@ export default function BoxingRing() {
         </div>
     )
 }
+
+                // <div>
+                //     <img style={{height: "20vh", borderRadius: "100%"}} src="https://www.emojirequest.com/images/BoxingEmoji.jpg" alt="Your Avatar" />
+                //     <h3>You</h3>
+                //     <h3>HP: {yourHealth}</h3>
+                // </div>

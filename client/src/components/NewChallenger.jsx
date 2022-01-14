@@ -6,7 +6,7 @@ import HelpButton from "./HelpButton";
 const default_input = {
     name: "",
     hp: 10,
-    image: "https://image.similarpng.com/very-thumbnail/2020/07/Expressionless-emoji-Face-on-transparent-PNG.png",
+    image: "https://www.emojirequest.com/images/BoxingEmoji.jpg",
 }
 
 
