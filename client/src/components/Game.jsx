@@ -8,6 +8,7 @@ export default function Game(props) {
     const [playerChoice, setPlayerChoice] = useState("");
     const [compChoice, setCompChoice] = useState("");
     const [disable, setDisable] = useState(false);
+    const [disableDef, setDisableDef] = useState(false);
     const navigate = useNavigate();
 
 
@@ -25,7 +26,7 @@ export default function Game(props) {
 
     useEffect(() => {
        setDisable(false);
-       console.log(playerChoice, compChoice)
+       setDisableDef(false);
 
         if(playerChoice === "jab" && compChoice === "jab"){
             setCompHealth(compHealth - 1);
@@ -123,6 +124,7 @@ export default function Game(props) {
             }
         }else if(playerChoice === "defend" && compChoice === "defend"){
             if(disable === false){
+                setDisableDef(true);
             toast("Someone throw a punch!", {
                 position: "top-center",
                 autoClose: 2000,
@@ -145,13 +147,12 @@ export default function Game(props) {
         }
     },[yourHealth, compHealth])
 
-    return (
-            
+    return (            
         <div id="game-buttons">
             <Taunt disable={disable} setDisable={setDisable}/>
             <button className="button" disabled={disable} onClick={() => handleClick("jab")}>Jab</button>
             <button className="button" onClick={() => handleClick("cross")}>Cross</button>
-            <button className="button" onClick={() => handleClick("defend")}>Defend</button>
+            <button className="button" disabled={disableDef} onClick={() => handleClick("defend")}>Defend</button>
         </div>
     )
 }

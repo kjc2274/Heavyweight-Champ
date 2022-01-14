@@ -2,11 +2,14 @@ import api from "../services/apiConfig";
 import { useParams } from "react-router-dom";
 import { useState, useEffect } from "react";
 import Game from "./Game";
+import HelpButton from "./HelpButton";
 
 export default function BoxingRing() {
     const [fighter, setFighter] = useState([]);
     const[yourHealth, setYourHealth] = useState(10);
     const[compHealth, setCompHealth] = useState(10);
+    const [visible, setVisible] = useState(false);
+    const myClass = "ring-help " + (visible ? "show" : "hide");
     const {id} = useParams();
 
     useEffect(()=>{
@@ -37,6 +40,7 @@ export default function BoxingRing() {
                 </div>
             </div>
                 <div>
+                    <HelpButton setVisible={setVisible}/>
                     <Game
                     compName={fighter.fields.name} 
                     compHealth={compHealth} 
@@ -45,6 +49,12 @@ export default function BoxingRing() {
                     setYourHealth={setYourHealth}
                     />
                 </div>
+                <p className={myClass}>
+                    'Jab' will always do one point of damage. 'Cross' does two points of damage if your opponent chooses
+                    'jab' or 'cross' as well, but takes two points of damage if they choose 'defend'. 'Taunt' takes away
+                    the 'jab' option, and it makes 'cross' and 'defend' do more damage if they connect. If you both defend,
+                    are forced to throw a punch and hope for the best.
+                </p>
         </div>
     )
 }

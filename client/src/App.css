@@ -5,13 +5,33 @@ a {
   color: rgb(9, 221, 9);
   text-shadow: 0 0 2px #1134fc;
 }
+h1 {
+  font-size: 40px;
+  padding-top: 20px;
+  position: center;
+  text-shadow: 0 0 3px #00ff62, 0 0 5px #88ff00;
+}
+h2{
+  color: rgb(9, 88, 49);
+  text-shadow: 0 0 3px #00ff62, 0 0 5px #88ff00;
+}
 
+
+#help-button{
+  background-color: rgb(76, 255, 21);
+  color: rgba(80, 68, 253);
+  font-size: large;
+  position: fixed;
+  left: 5px;
+  top: 5px;
+}
 .show{
   visibility: visible;
 }
 .hide{
   visibility: hidden;
 }
+
 
 .navbar {
   background: rgba(80, 68, 253, 0.5);
@@ -21,22 +41,6 @@ a {
   margin-bottom: 30px;
   color: rgb(9, 88, 49);
 }
-h1 {
-  font-size: 40px;
-  padding-top: 20px;
-  position: center;
-  text-shadow: 0 0 3px #00ff62, 0 0 5px #88ff00;
-}
-
-h2{
-  color: rgb(9, 88, 49);
-  text-shadow: 0 0 3px #00ff62, 0 0 5px #88ff00;
-}
-#custom-form{
-  color: rgb(76, 255, 21);
-  text-shadow: 1px 1px #1134fc;
-}
-
 #homeLink{
   font-size: x-large;
   position: fixed;
@@ -44,12 +48,7 @@ h2{
   top: 5px;
   text-shadow: 0 0 2px #00ff62;
 }
-#help-button{
-  font-size: large;
-  position: fixed;
-  left: 5px;
-  top: 5px;
-}
+
 
 .homeImage{
   height: 400px;
@@ -69,30 +68,17 @@ h2{
   text-shadow: 1px 1px #1134fc;
 }
 
-#ring{
-  display: flex;
-  justify-content: space-evenly;
-  color: rgb(9, 221, 9);
+
+#custom-form{
+  color: rgb(76, 255, 21);
+  text-shadow: 1px 1px #1134fc;
+}
+.create-help{
+  position: center;
+  color: rgb(76, 255, 21);
   text-shadow: 1px 1px #1134fc;
 }
 
-#game-buttons{
-  padding: 30px;
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-}
-
-.button{
-  font-size: x-large;
-  border-radius: 25%;
-  padding: 15px 30px;
-  margin: 20px;
-}
-
-.button:hover{
-  color: red;
-}
 
 #customList{
   display: flex;
@@ -100,10 +86,45 @@ h2{
   justify-content: space-evenly;
   list-style-type: none;
 }
-
 .fighterCard{
   padding: 10px;
 }
+.list-help{
+  position: center;
+  color: rgb(76, 255, 21);
+  text-shadow: 1px 1px #1134fc;
+}
+
+
+#ring{
+  display: flex;
+  justify-content: space-evenly;
+  color: rgb(9, 221, 9);
+  text-shadow: 1px 1px #1134fc;
+}
+.ring-help{
+  position: center;
+  color: rgb(76, 255, 21);
+  text-shadow: 1px 1px #1134fc;
+}
+
+
+#game-buttons{
+  padding: 30px;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+.button{
+  font-size: x-large;
+  border-radius: 25%;
+  padding: 15px 30px;
+  margin: 20px;
+}
+.button:hover{
+  color: red;
+}
+
 
 #victory-image{
   overflow: hidden;
@@ -117,6 +138,9 @@ h2{
   }
   #homepage{
     flex-direction: column;
+  }
+  #help-button{
+    font-size: medium;
   }
   .homeImage{
     margin-top: 30px;
@@ -140,6 +164,14 @@ h2{
   #customList{
     flex-direction: column;
     padding-left: 0px;
+  }
+  .list-help{
+    position: fixed;
+    top: 20px;
+    left: 5px;
+    width: 25vw;
+    color: rgb(76, 255, 21);
+    text-shadow: 1px 1px #1134fc;
   }
   .button{
     font-size: medium;

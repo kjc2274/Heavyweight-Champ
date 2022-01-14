@@ -1,6 +1,7 @@
 import { useState } from "react";
 import api from "../services/apiConfig";
 import { useNavigate } from "react-router-dom";
+import HelpButton from "./HelpButton";
 
 const default_input = {
     name: "",
@@ -11,6 +12,8 @@ const default_input = {
 
 export default function NewChallenger() {
     const [input, setInput] = useState(default_input);
+    const [visible, setVisible] = useState(false);
+    const myClass = "create-help " + (visible ? "show" : "hide");
     const navigate = useNavigate();
 
     const handleTextInput = (event) =>{
@@ -40,6 +43,7 @@ export default function NewChallenger() {
 
     return (
         <div>
+            <HelpButton setVisible={setVisible}/>
             <h2>Create Custom Opponent</h2>
             <form id="custom-form" onSubmit={handleSubmit}>
                 <label>Name:</label><br/>
@@ -53,6 +57,10 @@ export default function NewChallenger() {
                 <br />
                 <button>Submit</button>
             </form>
+            <p className={myClass}>
+                You must provide your fighter with a name. You may leave the "HP" and "ImageURL" fields in their 
+                default state, or change them as you desire.
+            </p>
         </div>
     )
 }

@@ -1,9 +1,12 @@
 import api from "../services/apiConfig";
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
+import HelpButton from "./HelpButton";
 
 export default function CustomOpponents() {
     const [fighters, setFighters] = useState([]);
+    const [visible, setVisible] = useState(false);
+    const myClass = "list-help " + (visible ? "show" : "hide");
 
     useEffect(()=>{
         const fetchFighters = async () => {
@@ -15,6 +18,7 @@ export default function CustomOpponents() {
 
     return (
         <div>
+            <HelpButton setVisible={setVisible}/>
             <h2>Choose Your Opponent</h2>
             <ul id="customList">
                 {fighters.map((fighter)=>{
@@ -26,7 +30,7 @@ export default function CustomOpponents() {
                                 src={fighter.fields.image} 
                                 alt={fighter.fields.name}/>
                                 <h3>{fighter.fields.name}</h3>
-                                <h4>{fighter.fields.hp}</h4>
+                                <h4>HP: {fighter.fields.hp}</h4>
                             </div>
                             </Link>
                         </li>
@@ -34,6 +38,10 @@ export default function CustomOpponents() {
                 })}
                 
             </ul>
+            <p className={myClass}>
+                Click on any icon to engage that opponent in the ring. Your HP is 10 so you will be at a 
+                disadvantage against any opponent with higher HP.
+            </p>
         </div>
     )
 }
