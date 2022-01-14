@@ -114,11 +114,20 @@ h2{
   color: rgb(9, 221, 9);
   text-shadow: 1px 1px #1134fc;
 }
+#gloves{
+  display: flex;
+  justify-content: center;
+}
 .glove{
   height: 20vh;
+  position: static;
 }
 #left-glove{
   transform: scaleX(-1);
+}
+.cross{
+  position: fixed;
+  top: 30vh;
 }
 
 

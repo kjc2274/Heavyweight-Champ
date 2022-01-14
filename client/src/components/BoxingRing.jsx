@@ -26,12 +26,12 @@ export default function BoxingRing() {
     }
     return (
         <div>
+                <h2>Fight!</h2>
             <div id="fight-card">
                 <div>
                     <h3>You</h3>
                     <h3>HP: {yourHealth}</h3>
                 </div>
-                <h2>Fight!</h2>
                 <div>
                     <h3>{fighter.fields.name}</h3>
                     <h3>HP: {compHealth}</h3>
@@ -40,20 +40,6 @@ export default function BoxingRing() {
             <div id="ring">
                 <div>
                     <img style={{height: "20vh", borderRadius: "100%"}} src={fighter.fields.image} alt={fighter.fields.name}/>
-                </div>
-                <div style={{marginTop: "50px"}}>
-                    <img 
-                    id="left-glove"
-                    className="glove"
-                    src="https://assets.stickpng.com/images/580b585b2edbce24c47b2ae8.png" 
-                    alt="boxing glove" 
-                    />
-                    <img 
-                    id="right-glove"
-                    className="glove"
-                    src="https://assets.stickpng.com/images/580b585b2edbce24c47b2ae8.png" 
-                    alt="boxing glove" 
-                    />
                 </div>
             </div>
                 <div>

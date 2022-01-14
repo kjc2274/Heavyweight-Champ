@@ -9,6 +9,7 @@ export default function Game(props) {
     const [compChoice, setCompChoice] = useState("");
     const [disable, setDisable] = useState(false);
     const [disableDef, setDisableDef] = useState(false);
+    const [cross, setCross] = useState(false);
     const navigate = useNavigate();
 
 
@@ -49,6 +50,8 @@ export default function Game(props) {
                 autoClose: 2000,
             });
         }else if(playerChoice === "cross" && compChoice === "jab"){
+            setCross(true);
+            setTimeout(() => {setCross(false)}, 250);
             if(disable === false){
             setCompHealth(compHealth - 2);
             setYourHealth(yourHealth -1);
@@ -65,6 +68,8 @@ export default function Game(props) {
                 });
             }
         }else if(playerChoice === "cross" && compChoice === "cross"){
+            setCross(true);
+            setTimeout(() => {setCross(false)}, 250);
             if(disable === false){
                 setCompHealth(compHealth - 2);
                 setYourHealth(yourHealth - 2);
@@ -81,6 +86,8 @@ export default function Game(props) {
                 });
             }           
         }else if(playerChoice === "cross" && compChoice === "defend"){
+            setCross(true);
+            setTimeout(() => {setCross(false)}, 250);
             if(disable === false){
             setYourHealth(yourHealth - 2);
             toast(`${compName} counters your cross!`, {
@@ -147,12 +154,30 @@ export default function Game(props) {
         }
     },[yourHealth, compHealth])
 
-    return (            
-        <div id="game-buttons">
-            <Taunt disable={disable} setDisable={setDisable}/>
-            <button className="button" disabled={disable} onClick={() => handleClick("jab")}>Jab</button>
-            <button className="button" onClick={() => handleClick("cross")}>Cross</button>
-            <button className="button" disabled={disableDef} onClick={() => handleClick("defend")}>Defend</button>
+    return (
+        <div>
+            <div id="gloves" style={{marginTop: "70px"}}>
+                    <div id="left-glove">
+                        <img 
+                        className="glove"
+                        src="https://assets.stickpng.com/images/580b585b2edbce24c47b2ae8.png" 
+                        alt="boxing glove" 
+                        />
+                    </div>
+                    <div id="right-glove" className={(cross ? "cross" : null)}>
+                        <img 
+                        className="glove"
+                        src="https://assets.stickpng.com/images/580b585b2edbce24c47b2ae8.png" 
+                        alt="boxing glove" 
+                        />
+                    </div>
+            </div>            
+            <div id="game-buttons">
+                <Taunt disable={disable} setDisable={setDisable}/>
+                <button className="button" disabled={disable} onClick={() => handleClick("jab")}>Jab</button>
+                <button className="button" onClick={() => handleClick("cross")}>Cross</button>
+                <button className="button" disabled={disableDef} onClick={() => handleClick("defend")}>Defend</button>
+            </div>
         </div>
     )
 }
