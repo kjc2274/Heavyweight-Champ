@@ -109,7 +109,7 @@ export default function Game(props) {
             }
         }else if(playerChoice === "defend" && compChoice === "jab"){
             setBlock(true);
-            setTimeout(() => {setBlock(false)}, 1500);
+            setTimeout(() => {setBlock(false)}, 1000);
             if(disable === false){
             setYourHealth(yourHealth -1);
             toast(`You defend against ${compName}'s jab!`, {
@@ -141,7 +141,7 @@ export default function Game(props) {
             }
         }else if(playerChoice === "defend" && compChoice === "defend"){
             setBlock(true);
-            setTimeout(() => {setBlock(false)}, 1500);
+            setTimeout(() => {setBlock(false)}, 1000);
             if(disable === false){
                 setDisableDef(true);
             toast("Someone throw a punch!", {
