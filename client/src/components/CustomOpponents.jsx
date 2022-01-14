@@ -26,7 +26,7 @@ export default function CustomOpponents() {
                         <li className="fighterCard" key={fighter.id}>
                             <Link to={`/ring/${fighter.id}`}>
                             <div>
-                                <img style={{ height: "20vh", borderRadius: "100%"}} 
+                                <img style={{ height: "200px", width:"200px", borderRadius: "100%"}} 
                                 src={fighter.fields.image} 
                                 alt={fighter.fields.name}/>
                                 <h3>{fighter.fields.name}</h3>

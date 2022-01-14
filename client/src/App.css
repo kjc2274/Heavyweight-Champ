@@ -87,6 +87,10 @@ h2{
   list-style-type: none;
 }
 .fighterCard{
+  background: linear-gradient(217deg, rgb(128, 126, 125), rgba(255,0,0,0) 70.71%),
+              linear-gradient(127deg, rgb(255, 238, 0), rgba(0,255,0,0) 70.71%),
+              linear-gradient(336deg, rgb(63, 63, 207), rgba(0,0,255,0) 70.71%);
+  border-radius: 10%;
   padding: 10px;
 }
 .list-help{
@@ -219,10 +223,10 @@ h2{
     
   }
   #jab{
-    margin: -35% -16% 0 0;
+    margin: -45% -16% 0 0;
   }
   #cross{
-    margin: -35%  0 0 -16%;
+    margin: -45%  0 0 -16%;
   }
   .block{
     margin: 0 -12%;

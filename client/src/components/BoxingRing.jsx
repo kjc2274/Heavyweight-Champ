@@ -39,7 +39,7 @@ export default function BoxingRing() {
             </div>
             <div id="ring">
                 <div>
-                    <img style={{height: "20vh", borderRadius: "100%"}} src={fighter.fields.image} alt={fighter.fields.name}/>
+                    <img style={{height: "200px", width: "200px", borderRadius: "100%"}} src={fighter.fields.image} alt={fighter.fields.name}/>
                 </div>
             </div>
                 <div>
