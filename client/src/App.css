@@ -52,7 +52,8 @@ h2{
 }
 
 .homeImage{
-  height: 40vh;
+  height: 400px;
+  width: 300px;
   border-radius: 15%;
 }
 #homepage{
@@ -61,9 +62,9 @@ h2{
   justify-content: space-evenly;
 }
 .homepage-help{
-  width: 50%;
-  background-color: rgb(39, 28, 28, .5);
-  position: fixed;
+  width: 300px;
+  background-color: rgb(39, 28, 28);
+  position: absolute;
   color: rgb(76, 255, 21);
   text-shadow: 1px 1px #1134fc;
 }
@@ -123,6 +124,11 @@ h2{
   .button{
     font-size: large;
     margin: 10px;
+  }
+  .homepage-help{
+    width: 75%;
+    left: 50%;
+    margin-left: -37.5%;
   }
 }
 
