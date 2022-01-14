@@ -89,7 +89,7 @@ h2{
 .fighterCard{
   background: linear-gradient(217deg, rgb(128, 126, 125), rgba(255,0,0,0) 70.71%),
               linear-gradient(127deg, rgb(255, 238, 0), rgba(0,255,0,0) 70.71%),
-              linear-gradient(336deg, rgb(63, 63, 207), rgba(0,0,255,0) 70.71%);
+              linear-gradient(336deg, rgba(0,0,255), rgba(0,0,255,0) 70.71%);
   border-radius: 10%;
   padding: 10px;
 }
@@ -137,6 +137,15 @@ h2{
 }
 .block{
   margin: 0 -4%;
+}
+#hit{
+  position: absolute;
+  height: 600px;
+  width: 600px;
+  left: 50%;
+  top: 50%;
+  margin-top: -300px;
+  margin-left: -300px;
 }
 
 
@@ -194,6 +203,12 @@ h2{
   .block{
     margin: 0 -7%;
   }
+  #hit{
+    height: 400px;
+    width: 400px;
+    margin-top: -50px;
+    margin-left: -200px;
+  }
 }
 
 @media (max-width: 450px){
@@ -230,5 +245,11 @@ h2{
   }
   .block{
     margin: 0 -12%;
+  }
+  #hit{
+    height: 300px;
+    width: 300px;
+    margin-top: 50px;
+    margin-left: -150px;
   }
 }

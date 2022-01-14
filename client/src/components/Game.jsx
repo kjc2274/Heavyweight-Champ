@@ -12,6 +12,7 @@ export default function Game(props) {
     const [cross, setCross] = useState(false);
     const [jab, setJab] = useState(false);
     const [block, setBlock] = useState(false);
+    const [visiblePunch, setVisiblePunch] = useState(false);
     const navigate = useNavigate();
 
 
@@ -34,6 +35,8 @@ export default function Game(props) {
         if(playerChoice === "jab" && compChoice === "jab"){
             setJab(true);
             setTimeout(() => {setJab(false)}, 120);
+            setVisiblePunch(true);
+            setTimeout(() => {setVisiblePunch(false)}, 500);
             setCompHealth(compHealth - 1);
             setYourHealth(yourHealth -1);
             toast("You exchange jabs!", {
@@ -41,10 +44,9 @@ export default function Game(props) {
                 autoClose: 2000,
             });
         }else if(playerChoice === "jab" && compChoice === "cross"){
-            setJab(true);
-            setTimeout(() => {setJab(false)}, 120);
-            setCompHealth(compHealth - 1);
-            setYourHealth(yourHealth - 2);
+            setVisiblePunch(true);
+            setTimeout(() => {setVisiblePunch(false)}, 1000);
+            setYourHealth(yourHealth - 1);
             toast(`${compName} connects with a cross!`, {
                 position: "top-center",
                 autoClose: 2000,
@@ -61,15 +63,13 @@ export default function Game(props) {
             setCross(true);
             setTimeout(() => {setCross(false)}, 250);
             if(disable === false){
-            setCompHealth(compHealth - 2);
-            setYourHealth(yourHealth -1);
+            setCompHealth(compHealth - 1);
             toast(`You hit ${compName} with a cross!`, {
                 position: "top-center",
                 autoClose: 2000,
             });
             }else{
-                setCompHealth(compHealth - 3);
-                setYourHealth(yourHealth - 1);
+                setCompHealth(compHealth - 2);
                 toast(`You hook around ${compName}'s jab!`, {
                     position: "top-center",
                     autoClose: 2000,
@@ -78,30 +78,34 @@ export default function Game(props) {
         }else if(playerChoice === "cross" && compChoice === "cross"){
             setCross(true);
             setTimeout(() => {setCross(false)}, 250);
+            setVisiblePunch(true);
+            setTimeout(() => {setVisiblePunch(false)}, 1000);
             if(disable === false){
-                setCompHealth(compHealth - 2);
-                setYourHealth(yourHealth - 2);
+                setCompHealth(compHealth - 1);
+                setYourHealth(yourHealth - 1);
                 toast("You exhchange crossing blows!", {
                     position: "top-center",
                     autoClose: 2000,
                 });
             }else{
-                setCompHealth(compHealth - 3);
-                setYourHealth(yourHealth - 3);
+                setCompHealth(compHealth - 2);
+                setYourHealth(yourHealth - 2);
                 toast("You kinda asked for this!", {
                     position: "top-center",
                     autoClose: 2000,
                 });
             }           
         }else if(playerChoice === "cross" && compChoice === "defend"){
+            setVisiblePunch(true);
+            setTimeout(() => {setVisiblePunch(false)}, 1000);
             if(disable === false){
-            setYourHealth(yourHealth - 2);
+            setYourHealth(yourHealth - 1);
             toast(`${compName} counters your cross!`, {
                 position: "top-center",
                 autoClose: 2000,
             });
             }else{
-                setYourHealth(yourHealth - 4);
+                setYourHealth(yourHealth - 2);
                 toast(`${compName} easily counters your desperate attack!`, {
                     position: "top-center",
                     autoClose: 2000,
@@ -110,6 +114,8 @@ export default function Game(props) {
         }else if(playerChoice === "defend" && compChoice === "jab"){
             setBlock(true);
             setTimeout(() => {setBlock(false)}, 1000);
+            setVisiblePunch(true);
+            setTimeout(() => {setVisiblePunch(false)}, 500);
             if(disable === false){
             setYourHealth(yourHealth -1);
             toast(`You defend against ${compName}'s jab!`, {
@@ -127,13 +133,13 @@ export default function Game(props) {
             setCross(true);
             setTimeout(() => {setCross(false)}, 250);
             if(disable === false){
-            setCompHealth(compHealth - 2);
+            setCompHealth(compHealth - 1);
             toast(`You counter ${compName}'s cross!`, {
                 position: "top-center",
                 autoClose: 2000,
             });
             }else{
-                setCompHealth(compHealth - 4);
+                setCompHealth(compHealth - 2);
                 toast(`You counter ${compName}'s furious attack!`, {
                 position: "top-center",
                 autoClose: 2000,
@@ -168,6 +174,9 @@ export default function Game(props) {
 
     return (
         <div>
+             <div  className={(visiblePunch? "show" : "hide")}>
+                <img id="hit" src="https://pngimg.com/uploads/boxing_gloves/boxing_gloves_PNG102638.png" alt="boxing glove up close" />
+            </div>
             <div id="gloves" style={{marginTop: "70px"}}>
                     <div id={(jab ? "jab" : null)} className={(block ? "block" : null)}>
                         <img 
