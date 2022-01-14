@@ -123,7 +123,15 @@ h2{
   position: static;
 }
 #left-glove{
+  margin: 0 -4%;
   transform: scaleX(-1);
+}
+#right-glove{
+  margin: 0 -4%;;
+}
+.jab{
+  position: fixed;
+  top: 30vh;
 }
 .cross{
   position: fixed;

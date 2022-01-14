@@ -10,6 +10,7 @@ export default function Game(props) {
     const [disable, setDisable] = useState(false);
     const [disableDef, setDisableDef] = useState(false);
     const [cross, setCross] = useState(false);
+    const [jab, setJab] = useState(false);
     const navigate = useNavigate();
 
 
@@ -30,6 +31,8 @@ export default function Game(props) {
        setDisableDef(false);
 
         if(playerChoice === "jab" && compChoice === "jab"){
+            setJab(true);
+            setTimeout(() => {setJab(false)}, 120);
             setCompHealth(compHealth - 1);
             setYourHealth(yourHealth -1);
             toast("You exchange jabs!", {
@@ -37,6 +40,8 @@ export default function Game(props) {
                 autoClose: 2000,
             });
         }else if(playerChoice === "jab" && compChoice === "cross"){
+            setJab(true);
+            setTimeout(() => {setJab(false)}, 120);
             setCompHealth(compHealth - 1);
             setYourHealth(yourHealth - 2);
             toast(`${compName} connects with a cross!`, {
@@ -44,6 +49,8 @@ export default function Game(props) {
                 autoClose: 2000,
             });
         }else if(playerChoice === "jab" && compChoice === "defend"){
+            setJab(true);
+            setTimeout(() => {setJab(false)}, 120);
             setCompHealth(compHealth - 1);
             toast(`You jab at ${compName}'s defense!`, {
                 position: "top-center",
@@ -157,7 +164,7 @@ export default function Game(props) {
     return (
         <div>
             <div id="gloves" style={{marginTop: "70px"}}>
-                    <div id="left-glove">
+                    <div id="left-glove" className={(jab ? "jab" : null)}>
                         <img 
                         className="glove"
                         src="https://assets.stickpng.com/images/580b585b2edbce24c47b2ae8.png" 
