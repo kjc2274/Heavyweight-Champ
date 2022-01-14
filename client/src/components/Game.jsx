@@ -31,12 +31,14 @@ export default function Game(props) {
     useEffect(() => {
        setDisable(false);
        setDisableDef(false);
+       let timeout = null;
+       let timeout2 = null;
 
         if(playerChoice === "jab" && compChoice === "jab"){
             setJab(true);
-            setTimeout(() => {setJab(false)}, 120);
+            timeout = setTimeout(() => {setJab(false)}, 120);
             setVisiblePunch(true);
-            setTimeout(() => {setVisiblePunch(false)}, 500);
+            timeout2 =setTimeout(() => {setVisiblePunch(false)}, 300);
             setCompHealth(compHealth - 1);
             setYourHealth(yourHealth -1);
             toast("You exchange jabs!", {
@@ -45,7 +47,7 @@ export default function Game(props) {
             });
         }else if(playerChoice === "jab" && compChoice === "cross"){
             setVisiblePunch(true);
-            setTimeout(() => {setVisiblePunch(false)}, 1000);
+            timeout =setTimeout(() => {setVisiblePunch(false)}, 600);
             setYourHealth(yourHealth - 1);
             toast(`${compName} connects with a cross!`, {
                 position: "top-center",
@@ -53,7 +55,7 @@ export default function Game(props) {
             });
         }else if(playerChoice === "jab" && compChoice === "defend"){
             setJab(true);
-            setTimeout(() => {setJab(false)}, 120);
+            timeout = setTimeout(() => {setJab(false)}, 120);
             setCompHealth(compHealth - 1);
             toast(`You jab at ${compName}'s defense!`, {
                 position: "top-center",
@@ -61,7 +63,7 @@ export default function Game(props) {
             });
         }else if(playerChoice === "cross" && compChoice === "jab"){
             setCross(true);
-            setTimeout(() => {setCross(false)}, 250);
+            timeout =setTimeout(() => {setCross(false)}, 250);
             if(disable === false){
             setCompHealth(compHealth - 1);
             toast(`You hit ${compName} with a cross!`, {
@@ -77,9 +79,9 @@ export default function Game(props) {
             }
         }else if(playerChoice === "cross" && compChoice === "cross"){
             setCross(true);
-            setTimeout(() => {setCross(false)}, 250);
+            timeout = setTimeout(() => {setCross(false)}, 250);
             setVisiblePunch(true);
-            setTimeout(() => {setVisiblePunch(false)}, 1000);
+            timeout2 = setTimeout(() => {setVisiblePunch(false)}, 600);
             if(disable === false){
                 setCompHealth(compHealth - 1);
                 setYourHealth(yourHealth - 1);
@@ -97,7 +99,7 @@ export default function Game(props) {
             }           
         }else if(playerChoice === "cross" && compChoice === "defend"){
             setVisiblePunch(true);
-            setTimeout(() => {setVisiblePunch(false)}, 1000);
+            timeout = setTimeout(() => {setVisiblePunch(false)}, 600);
             if(disable === false){
             setYourHealth(yourHealth - 1);
             toast(`${compName} counters your cross!`, {
@@ -113,9 +115,9 @@ export default function Game(props) {
             }
         }else if(playerChoice === "defend" && compChoice === "jab"){
             setBlock(true);
-            setTimeout(() => {setBlock(false)}, 1000);
+            timeout = setTimeout(() => {setBlock(false)}, 1000);
             setVisiblePunch(true);
-            setTimeout(() => {setVisiblePunch(false)}, 500);
+            timeout2 = setTimeout(() => {setVisiblePunch(false)}, 300);
             if(disable === false){
             setYourHealth(yourHealth -1);
             toast(`You defend against ${compName}'s jab!`, {
@@ -131,7 +133,7 @@ export default function Game(props) {
             }
         }else if(playerChoice === "defend" && compChoice === "cross"){
             setCross(true);
-            setTimeout(() => {setCross(false)}, 250);
+            timeout = setTimeout(() => {setCross(false)}, 250);
             if(disable === false){
             setCompHealth(compHealth - 1);
             toast(`You counter ${compName}'s cross!`, {
@@ -147,7 +149,7 @@ export default function Game(props) {
             }
         }else if(playerChoice === "defend" && compChoice === "defend"){
             setBlock(true);
-            setTimeout(() => {setBlock(false)}, 1000);
+            timeout = setTimeout(() => {setBlock(false)}, 1000);
             if(disable === false){
                 setDisableDef(true);
             toast("Someone throw a punch!", {
@@ -155,12 +157,15 @@ export default function Game(props) {
                 autoClose: 2000,
             });
             }else{
-                setYourHealth(yourHealth - 1);
                 toast("You stumble and look like a fool!", {
                     position: "top-center",
                     autoClose: 2000,
                 });
             }
+        }
+        return () =>{
+            clearTimeout(timeout);
+            clearTimeout(timeout2);
         }
     }, [playerChoice, compChoice])
 
