@@ -53,10 +53,11 @@ export default function BoxingRing() {
                     />
                 </div>
                 <p className={myClass}>
-                    'Jab' will always do one point of damage. 'Cross' does two points of damage if your opponent chooses
-                    'jab' or 'cross' as well, but takes two points of damage if they choose 'defend'. 'Taunt' takes away
-                    the 'jab' option, and it makes 'cross' and 'defend' do more damage if they connect. If you both defend,
-                    are forced to throw a punch and hope for the best.
+                    "Jab", "Cross", and "Defend" work with a basic rock-paper-scissors gameplay logic. "Cross" beats 
+                    "Jab", "Jab" beats "Defend", and "Defend" beats "Cross". Ties on "Jab" and "Cross" cause both you and 
+                    your opponent to take damage, but ties on "Defend" cause you to lose the ability to choose "Defend" for
+                    your next action. Taunting your opponent takes away the "Jab" option, and increases the damage taken
+                    or received on your next action.
                 </p>
         </div>
     )

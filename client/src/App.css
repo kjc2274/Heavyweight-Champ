@@ -66,6 +66,7 @@ h2{
   position: absolute;
   color: rgb(76, 255, 21);
   text-shadow: 1px 1px #1134fc;
+  font-size: large;
 }
 
 
@@ -77,6 +78,7 @@ h2{
   position: center;
   color: rgb(76, 255, 21);
   text-shadow: 1px 1px #1134fc;
+  font-size: xx-large;
 }
 
 
@@ -88,15 +90,18 @@ h2{
 }
 .fighterCard{
   background: linear-gradient(217deg, rgb(128, 126, 125), rgba(255,0,0,0) 70.71%),
-              linear-gradient(127deg, rgb(255, 238, 0), rgba(0,255,0,0) 70.71%),
+              linear-gradient(127deg, rgb(255, 245, 102), rgba(0,255,0,0) 70.71%),
               linear-gradient(336deg, rgba(0,0,255), rgba(0,0,255,0) 70.71%);
   border-radius: 10%;
   padding: 10px;
+  margin: 8px;
+  /* background: linear-gradient(270deg, #57606f,#d3d3d3) */
 }
 .list-help{
   position: center;
   color: rgb(76, 255, 21);
   text-shadow: 1px 1px #1134fc;
+  font-size: xx-large;
 }
 
 
@@ -108,9 +113,11 @@ h2{
   text-shadow: 1px 1px #1134fc;
 }
 .ring-help{
+  font-size: xx-large;
   position: center;
   color: rgb(76, 255, 21);
   text-shadow: 1px 1px #1134fc;
+  margin-top: 0;
 }
 #fight-card{
   display: flex;
@@ -150,7 +157,7 @@ h2{
 
 
 #game-buttons{
-  padding: 30px;
+  padding-top: 30px;
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
@@ -194,6 +201,23 @@ h2{
     left: 50%;
     margin-left: -37.5%;
   }
+  .list-help{
+    position: fixed;
+    top: 40px;
+    left: 5px;
+    width: 100%;
+    background: rgb(19, 18, 18, .5);
+    color: rgb(76, 255, 21);
+    text-shadow: 1px 1px #1134fc;
+    font-size: x-large;
+  }
+  .ring-help{
+    font-size: x-large;
+    position: fixed;
+    top: 60px;
+    left: 5px;    
+    background: rgb(19, 18, 18, .5);
+  }
   #jab{
     margin: -20% -10% 0 0;
   }
@@ -219,14 +243,6 @@ h2{
   #customList{
     flex-direction: column;
     padding-left: 0px;
-  }
-  .list-help{
-    position: fixed;
-    top: 20px;
-    left: 5px;
-    width: 25vw;
-    color: rgb(76, 255, 21);
-    text-shadow: 1px 1px #1134fc;
   }
   .button{
     font-size: medium;
