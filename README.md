@@ -6,14 +6,14 @@ Heavyweight Champ
 
 ## Project Description
 
-A boxing game.
+This a rock-paper-scissors style boxing game built in react. Choose an opponent from an api database, or create your own opponent and add it to that database.
 
 ## Wireframes
 
 https://whimsical.com/heavyweight-champ-7my5p6P3ELdELKZgu3KM71
 
 ## Component Hierarchy
-Show your component hierarchy here! Use [this](https://cms-assets.tutsplus.com/uploads/users/1795/posts/30352/image/GettingStartedWithReduxTutorial-React-Component-Structure.png) as an example.
+https://whimsical.com/hcch-SoTScz8m48Tvr4fxJcttGu
 
 ## API and Data Sample
 
@@ -24,29 +24,32 @@ Show your component hierarchy here! Use [this](https://cms-assets.tutsplus.com/u
         {
             "id": "reccmWldmp0ll3Akm",
             "fields": {
-                "HP": 8,
-                "Name": "Easy"
+                "hp": 8,
+                "image": "https://cdn.pixabay.com/photo/2020/12/27/20/24/smile-5865208_1280.png",
+                "name": "Easy Fighter"
             },
             "createdTime": "2022-01-10T14:25:13.000Z"
         },
         {
             "id": "recH5Hqbnx1lALkG8",
             "fields": {
-                "HP": 10,
-                "Name": "Medium"
+                "hp": 10,
+                "image": "https://i.pinimg.com/originals/2a/c1/68/2ac16840f336a16cea560af80ef9cc8f.png",
+                "name": "Regular Fighter"
             },
             "createdTime": "2022-01-10T14:25:13.000Z"
         },
         {
             "id": "recYS4jdYWLVgzX0P",
             "fields": {
-                "HP": 12,
-                "Name": "Hard"
+                "hp": 12,
+                "image": "https://i.pinimg.com/originals/85/6c/72/856c72c52a0be9efbc5315927e1fff85.png",
+                "name": "Tough Fighter"
             },
             "createdTime": "2022-01-10T14:25:13.000Z"
         }
     ],
-    "offset": "itrbpsfRuRnSrjA8d/recYS4jdYWLVgzX0P"
+    "offset": "itrvRcJnx54TshE60/recYS4jdYWLVgzX0P"
 }
 ```
 
@@ -67,32 +70,32 @@ Show your component hierarchy here! Use [this](https://cms-assets.tutsplus.com/u
 
 ## Project Schedule
 
-This schedule will be used to keep track of your progress throughout the week and align with our expectations. Here's an example.
-
 |  Day | Deliverable | Status
 |---|---| ---|
-|July 10-12| Prompt / Wireframes / Priority Matrix / Timeframes | Incomplete
-|July 13| Project Approval | Incomplete
-|July 13| Core Application Structure (HTML, CSS, etc.) | Incomplete
-|July 14| Pseudocode / actual code | Incomplete
-|July 15| Initial Clickable Model  | Incomplete
-|July 16| MVP | Incomplete
-|July 17| Presentations | Incomplete
+|January 7-9| Prompt / Wireframes / Priority Matrix / Timeframes | Incomplete
+|January 10| Project Approval | Incomplete
+|January 11| Core Application Structure (HTML, CSS, etc.) | Incomplete
+|January 12| Pseudocode / actual code | Incomplete
+|January 13| Initial Clickable Model  | Incomplete
+|January 14| MVP | Incomplete
+|January 17| Presentations | Incomplete
 
 ## Timeframes
 
-Tell us how long you anticipate spending on each area of development. Be sure to consider how many hours a day you plan to be coding and how many days you have available until presentation day.
-
-Time frames are also key in the development cycle.  You have limited time to code all parts of your app.  Your estimates can then be used to evalute possibilities based on time needed and the actual time you have before the app must be submitted. It's always best to pad the time by a few hours so that you account for the unknown so add an additional hour or two to each component to play it safe. Throughout your project, keep track of your Time Invested and Actual Time and update your README regularly.
-
 | Component | Priority | Estimated Time | Time Invested | Actual Time |
 | --- | :---: |  :---: | :---: | :---: |
-| Adding Form | H | 3hrs| 3.5hrs | 3.5hrs |
-| Working with API | H | 3hrs| 2.5hrs | 2.5hrs |
-| Basic game functionality | H | 3hrs| 2.5hrs | 2.5hrs |
-| Styling | H | 3hrs| 2.5hrs | 2.5hrs |
-| Responsive Design | H | 3hrs| 2.5hrs | 2.5hrs |
-| Total | H | 6hrs| 5hrs | 5hrs |
+| Adding Components | H | 3hrs| 3.5hrs | 3.5hrs |
+| Working with API | H | 1hrs| 2hrs | 2hrs |
+| Basic game functionality | H | 3hrs| 4hrs | 4hrs |
+| Styling | M | 3hrs| 6.5hrs | 6.5hrs |
+| Responsive Design | H | 1hrs| 1hrs | 1hrs |
+| Reasearch | H | 3hrs| 3hrs | 3hrs |
+| Adding Animations | L | 3hrs| 3hrs | 3hrs |
+| Improving Game| M | 3hrs| 3hrs | 3hrs |
+| Undoing "Improvements"| H | 0hrs| 3hrs | 3hrs |
+| Cleaning Code | M | 1hrs| 1.5hrs | 1.5hrs |
+| Debugging | H | 3hrs| 4hrs | 4hrs |
+| Total | H | 24hrs| 34.5hrs | 34.5hrs |
 
 ## SWOT Analysis
 
