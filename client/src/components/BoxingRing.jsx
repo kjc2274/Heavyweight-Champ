@@ -37,6 +37,13 @@ export default function BoxingRing() {
                     <h3>HP: {compHealth}</h3>
                 </div>
             </div>
+                <p className={myClass}>
+                    "Jab", "Cross", and "Defend" work with a basic rock-paper-scissors gameplay logic. "Cross" beats 
+                    "Jab", "Jab" beats "Defend", and "Defend" beats "Cross". Ties on "Jab" and "Cross" cause both you and 
+                    your opponent to take damage, but ties on "Defend" cause you to lose the ability to choose "Defend" for
+                    your next action. Taunting your opponent takes away the "Jab" option, and increases the damage taken
+                    or received on your next action.
+                </p>
             <div id="ring">
                 <div>
                     <img style={{height: "200px", width: "200px", borderRadius: "100%"}} src={fighter.fields.image} alt={fighter.fields.name}/>
@@ -52,19 +59,6 @@ export default function BoxingRing() {
                     setYourHealth={setYourHealth}
                     />
                 </div>
-                <p className={myClass}>
-                    "Jab", "Cross", and "Defend" work with a basic rock-paper-scissors gameplay logic. "Cross" beats 
-                    "Jab", "Jab" beats "Defend", and "Defend" beats "Cross". Ties on "Jab" and "Cross" cause both you and 
-                    your opponent to take damage, but ties on "Defend" cause you to lose the ability to choose "Defend" for
-                    your next action. Taunting your opponent takes away the "Jab" option, and increases the damage taken
-                    or received on your next action.
-                </p>
         </div>
     )
 }
-
-                // <div>
-                //     <img style={{height: "20vh", borderRadius: "100%"}} src="https://www.emojirequest.com/images/BoxingEmoji.jpg" alt="Your Avatar" />
-                //     <h3>You</h3>
-                //     <h3>HP: {yourHealth}</h3>
-                // </div>
