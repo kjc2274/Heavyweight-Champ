@@ -6,7 +6,7 @@ Heavyweight Champ
 
 ## Project Description
 
-This a rock-paper-scissors style boxing game built in react. Choose an opponent from an api database, or create your own opponent and add it to that database.
+This is a rock-paper-scissors style boxing game built in react. Choose an opponent from an API database, or create your own opponent and add it to that database.
 
 ## Wireframes
 
