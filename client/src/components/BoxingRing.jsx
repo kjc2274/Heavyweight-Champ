@@ -3,7 +3,7 @@ import { useParams } from "react-router-dom";
 import { useState, useEffect } from "react";
 import Game from "./Game";
 import HelpButton from "./HelpButton";
-import { Howl, Howler } from "howler";
+import { Howl } from "howler";
 import bell from "../audioclips/bell.mp3";
 
 export default function BoxingRing() {

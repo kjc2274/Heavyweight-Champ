@@ -2,6 +2,9 @@ import { useState, useEffect } from "react";
 import { toast } from "react-toastify";
 import Taunt from "./Taunt";
 import { useNavigate } from "react-router-dom";
+import { Howl } from "howler";
+import punch from "../audioclips/punch.mp3";
+import punch2 from "../audioclips/punch2.mp3";
 
 export default function Game(props) {
     const choices = ["jab", "cross", "defend"];
@@ -15,8 +18,16 @@ export default function Game(props) {
     const [visiblePunch, setVisiblePunch] = useState(false);
     const navigate = useNavigate();
 
-
     const {yourHealth, setYourHealth, compHealth, setCompHealth, compName} = props;
+
+    let sound = new Howl({
+        src: [punch],
+        volume: 0.5,
+      });
+    let sound2 = new Howl({
+        src: [punch2],
+        volume: 0.5,
+      });
 
     const compRandomChoice = () => {
         setCompChoice(choices[Math.floor(Math.random() * choices.length)]);
@@ -35,6 +46,8 @@ export default function Game(props) {
        let timeout2 = null;
 
         if(playerChoice === "jab" && compChoice === "jab"){
+            sound.play();
+            sound2.play();
             setJab(true);
             timeout = setTimeout(() => {setJab(false)}, 120);
             setVisiblePunch(true);
@@ -46,6 +59,7 @@ export default function Game(props) {
                 autoClose: 2000,
             });
         }else if(playerChoice === "jab" && compChoice === "cross"){
+            sound2.play();
             setVisiblePunch(true);
             timeout =setTimeout(() => {setVisiblePunch(false)}, 600);
             setYourHealth(yourHealth - 1);
@@ -54,6 +68,7 @@ export default function Game(props) {
                 autoClose: 2000,
             });
         }else if(playerChoice === "jab" && compChoice === "defend"){
+            sound.play();
             setJab(true);
             timeout = setTimeout(() => {setJab(false)}, 120);
             setCompHealth(compHealth - 1);
@@ -62,6 +77,7 @@ export default function Game(props) {
                 autoClose: 2000,
             });
         }else if(playerChoice === "cross" && compChoice === "jab"){
+            sound.play();
             setCross(true);
             timeout =setTimeout(() => {setCross(false)}, 250);
             if(disable === false){
@@ -78,6 +94,8 @@ export default function Game(props) {
                 });
             }
         }else if(playerChoice === "cross" && compChoice === "cross"){
+            sound.play();
+            sound2.play();
             setCross(true);
             timeout = setTimeout(() => {setCross(false)}, 250);
             setVisiblePunch(true);
@@ -98,6 +116,7 @@ export default function Game(props) {
                 });
             }           
         }else if(playerChoice === "cross" && compChoice === "defend"){
+            sound2.play();
             setVisiblePunch(true);
             timeout = setTimeout(() => {setVisiblePunch(false)}, 600);
             if(disable === false){
@@ -114,6 +133,7 @@ export default function Game(props) {
                 });
             }
         }else if(playerChoice === "defend" && compChoice === "jab"){
+            sound2.play();
             setBlock(true);
             timeout = setTimeout(() => {setBlock(false)}, 1000);
             setVisiblePunch(true);
@@ -132,6 +152,7 @@ export default function Game(props) {
             });
             }
         }else if(playerChoice === "defend" && compChoice === "cross"){
+            sound.play();
             setCross(true);
             timeout = setTimeout(() => {setCross(false)}, 250);
             if(disable === false){
