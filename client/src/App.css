@@ -127,6 +127,7 @@ h2{
 #gloves{
   display: flex;
   justify-content: center;
+  margin-top: 70px;
 }
 .glove{
   height: 20vh;

@@ -182,12 +182,13 @@ export default function Game(props) {
              <div  className={(visiblePunch? "show" : "hide")}>
                 <img id="hit" src="https://pngimg.com/uploads/boxing_gloves/boxing_gloves_PNG102638.png" alt="boxing glove up close" />
             </div>
-            <div id="gloves" style={{marginTop: "70px"}}>
+            <div id="gloves" >
                     <div id={(jab ? "jab" : null)} className={(block ? "block" : null)}>
                         <img 
                         id="left-glove"
                         className="glove"
-                        src="https://assets.stickpng.com/images/580b585b2edbce24c47b2ae8.png" 
+                        src="https://assets.stickpng.com/images/580b585b2edbce24c47b2ae8.png"
+                        // src="https://creazilla-store.fra1.digitaloceanspaces.com/cliparts/14710/boxing-glove-sports-clipart-md.png" 
                         alt="boxing glove" 
                         />
                     </div>
@@ -195,7 +196,8 @@ export default function Game(props) {
                         <img 
                         id="right-glove"
                         className="glove"
-                        src="https://assets.stickpng.com/images/580b585b2edbce24c47b2ae8.png" 
+                        src="https://assets.stickpng.com/images/580b585b2edbce24c47b2ae8.png"
+                        // src="https://creazilla-store.fra1.digitaloceanspaces.com/cliparts/14710/boxing-glove-sports-clipart-md.png" 
                         alt="boxing glove" 
                         />
                     </div>
