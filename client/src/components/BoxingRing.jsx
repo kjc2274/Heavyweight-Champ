@@ -3,6 +3,8 @@ import { useParams } from "react-router-dom";
 import { useState, useEffect } from "react";
 import Game from "./Game";
 import HelpButton from "./HelpButton";
+import { Howl, Howler } from "howler";
+import bell from "../audioclips/bell.mp3";
 
 export default function BoxingRing() {
     const [fighter, setFighter] = useState([]);
@@ -12,6 +14,14 @@ export default function BoxingRing() {
     const myClass = "ring-help " + (visible ? "show" : "hide");
     const {id} = useParams();
 
+    let sound = new Howl({
+        src: [bell],
+        volume: 0.5,
+      });
+      
+      
+      
+
     useEffect(()=>{
         const fetchFighter = async () => {
             const res = await api.get(`/${id}`);
@@ -19,6 +29,7 @@ export default function BoxingRing() {
             setCompHealth(res.data.fields.hp);
         }
         fetchFighter();
+        sound.play();
     }, [])
 
     if(!fighter.fields){

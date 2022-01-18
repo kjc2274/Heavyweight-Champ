@@ -59,7 +59,7 @@ export default function NewChallenger() {
             </form>
             <p className={myClass}>
                 You must provide your fighter with a name. You may leave the "HP" and "ImageURL" fields in their 
-                default state, or change them as you desire.
+                default state, or change them as you so desire.
             </p>
         </div>
     )
