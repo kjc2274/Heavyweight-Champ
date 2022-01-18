@@ -30,6 +30,7 @@ export default function BoxingRing() {
         }
         fetchFighter();
         sound.play();
+        // eslint-disable-next-line
     }, [])
 
     if(!fighter.fields){

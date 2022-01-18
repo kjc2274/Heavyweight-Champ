@@ -188,6 +188,7 @@ export default function Game(props) {
             clearTimeout(timeout);
             clearTimeout(timeout2);
         }
+        // eslint-disable-next-line
     }, [playerChoice, compChoice])
 
     useEffect(()=>{
@@ -196,7 +197,8 @@ export default function Game(props) {
         }else if(yourHealth <= 0){
             navigate("/defeat")
         }
-    },[yourHealth, compHealth])
+        // eslint-disable-next-line
+    }, [yourHealth, compHealth])
 
     return (
         <div>
