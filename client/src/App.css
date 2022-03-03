@@ -132,6 +132,7 @@ h2{
 .glove{
   height: 20vh;
   position: static;
+  margin: 0 10px;
 }
 #left-glove{
   transform: scaleX(-1);
@@ -143,7 +144,7 @@ h2{
   margin: -10%  0 0 -6%;
 }
 .block{
-  margin: 0 -4%;
+  margin: 0 -1%;
 }
 #hit{
   position: absolute;
@@ -175,7 +176,7 @@ h2{
 
 #victory-image{
   overflow: hidden;
-  height: 45vh;
+  height: 45vh
 }
 
 @media (max-width: 800px){
@@ -267,5 +268,9 @@ h2{
     width: 300px;
     margin-top: 50px;
     margin-left: -150px;
+  }
+
+  #victory-image img{
+    width: 100vw;
   }
 }
